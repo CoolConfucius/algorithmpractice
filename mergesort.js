@@ -42,11 +42,12 @@ function merge(la, ra, arr){
 function mergesort(arr){
   if(arr.length <= 1) return arr; 
   if(arr.length > 1){
+    var mid = Math.floor(arr.length / 2);
     var la = [], ra = []; 
-    for(var i = 0; i < Math.floor(arr.length / 2); i++){
+    for(var i = 0; i < mid; i++){
       la.push(arr[i]);
     }
-    for(var j = Math.floor(arr.length / 2); j < arr.length; j++){
+    for(var j = mid; j < arr.length; j++){
       ra.push(arr[j]);
     }
     
