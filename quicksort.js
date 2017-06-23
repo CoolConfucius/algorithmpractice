@@ -1,6 +1,7 @@
 // Quick Sort 
 
 var arr = [7, 2, 1, 6, 8, 5, 3, 4];
+// var arr = [-30, 0, 10, 1, 3, 2, 4, -5, 9];
 
 function partition(arr, start, end){
   if(!start) start = 0; 
