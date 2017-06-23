@@ -1,9 +1,12 @@
+// You are given an array of length 10 that includes within it integers between 1 and 99, not necessarily unique and in a random order (Actually, it can be of any length, but let’s just say 10 for this problem.). Your task is to develop an algorithm to determine if there exists a pair of numbers within the array that sum to 100.
+
+
 
 function pairsum(array, target){
   var array = array; 
   console.log(array);
-  // quicksort(array); 
-  var array = mergesort(array);
+  quicksort(array); 
+  // var array = mergesort(array);
   var start = 0; 
   var end = array.length - 1; 
   var sum; 
@@ -16,19 +19,38 @@ function pairsum(array, target){
   return false; 
 }
 
-var arr = [-30, 0, 10, 1, 3, 2, 4, -5, 9];
+// var arr = [-30, 0, 10, 1, 3, 2, 4, -5, 9];
 // var arr = [30, 10, 1, 3, 2, 4, 5, 9];
-// var arr = [7, 2, 1, 6, 8, 5, 3, 4];
 // var arr = [-7, 2, 1, 6, 8, 5, 3, 4];
-var target = 10; 
-console.log(pairsum(arr, target));
+// var arr = [7, 2, 1, 6, 8, 5, 3, 4];
+var arrtrue = [7, 2, 1, 6, 8, 5, 3, 4, 99, 20];
+var arrfalse = [7, 2, 1, 6, 8, 5, 3, 4, 30, 20];
+
+var target = 100; 
+console.log(pairsum(arrtrue, target));
+console.log(pairsum(arrfalse, target));
 
 // Hash Table approach: 
 
-var hash = {}; 
 
+function hashpairsum(array, target){
+  var hash = {}; 
+  for (var i = 0; i < array.length; i++) {
+    var current = array[i]; 
+    if (hash[current]) return true; 
+    var difference = target - current; 
+    hash[difference] = true; 
+    console.log(hash);
+  };
+  return false; 
+}
 
+var arrtrue = [7, 2, 1, 6, 8, 5, 3, 4, 99, 20];
+// var arrtrue = [99, 2, 1, 6, 8, 5, 3, 4, 99, 20];
+var arrfalse = [7, 2, 1, 6, 8, 5, 3, 4, 30, 20];
 
+console.log(hashpairsum(arrtrue, target));
+// console.log(hashpairsum(arrfalse, target));
 
 
 // Quick Sort: 
