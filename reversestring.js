@@ -22,7 +22,13 @@ function reverseString(str) {
     return newString;
 }
 
-
+// recursion 
+function reverseString(str){
+  if (str === "") 
+    return "";
+  else 
+    return reverseString(str.substring(1)) + str.charAt(0); 
+}
 
 var rs = reverseString("hello"); 
 var rs1 = reverseString("Howdy"); 
